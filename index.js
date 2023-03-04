@@ -24,7 +24,7 @@ inquirer.prompt([
 .then((data) => {
 
 // A function to write README file
-    fs.writeFileSync("draftLogo.svg", logoCreator())
+    fs.writeFileSync("draftLogo.svg", logoCreator(data))
 });
 
 // License functions
@@ -44,8 +44,9 @@ inquirer.prompt([
             // }
 
 //  Populating the logo file
-function logoCreator() {
+function logoCreator(data) {
     console.log("logo coming soon");
+    console.log(`${data.color}`);
                     //     return `
                     // # Title: ${data.title}
                     
