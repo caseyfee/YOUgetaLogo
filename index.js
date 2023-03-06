@@ -23,7 +23,6 @@ inquirer.prompt([
         message: "What color would you like the background color of your logo be?", 
         // input can be a color OR a hexidicimal number
     },
-   
 ])
 
 
