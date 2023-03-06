@@ -29,12 +29,12 @@ inquirer.prompt([
 .then((data) => {
 
 // A function to write README file
-    fs.writeFileSync("./lib/logo.svg", logoCreator(data))
+    fs.writeFileSync("./lib/logo.svg", logoCreatorTri(data))
 });
 
 
-//  Populating the logo file
-function logoCreator(data) {
+//  Populating the logo file-Circle
+function logoCreatorCirc(data) {
     console.log(typeof(data));
     console.log("Generated logo.svg");
     console.log(`${data.color}`);
@@ -47,6 +47,40 @@ function logoCreator(data) {
     <${data.shape} cx="150" cy="100" r="80" fill="${data.bgColor}" />
   
     <text x="150" y="125" font-size="60" text-anchor="middle" fill="${data.textColor}">${data.text}</text>
+    </body>
+    </html>
+  </svg>`
+}
+
+// Triangle shape
+function logoCreatorTri(data)  {
+        console.log("Generated logo.svg");
+
+        return `<!DOCTYPE html>
+        <html>
+        <body>
+        <svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+
+        <polygon points ="150, 18 244, 182 56, 182" fill="${data.bgColor}" />
+    
+        <text x="150" y="145" font-size="60" text-anchor="middle" fill="${data.textColor}">${data.text}</text>
+        </body>
+        </html>
+      </svg>`
+    }
+
+// Square shape
+function logoCreatorSqu(data)  {
+    console.log("Generated logo.svg");
+
+    return `<!DOCTYPE html>
+    <html>
+    <body>
+    <svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+
+    <rect x="10" y="10" width="200" height="200" fill="${data.bgColor}"/>
+  
+    <text x="105" y="125" font-size="60" text-anchor="middle" fill="${data.textColor}">${data.text}</text>
     </body>
     </html>
   </svg>`

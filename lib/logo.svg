@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-    <html>
-    <body>
-    <svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+        <html>
+        <body>
+        <svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
 
-    <circle cx="150" cy="100" r="80" fill="red" />
-  
-    <text x="150" y="125" font-size="60" text-anchor="middle" fill="white">yes</text>
-    </body>
-    </html>
-  </svg>
+        <polygon points ="150, 18 244, 182 56, 182" fill="#3A900C" />
+    
+        <text x="150" y="145" font-size="60" text-anchor="middle" fill="#0C5890">No</text>
+        </body>
+        </html>
+      </svg>
