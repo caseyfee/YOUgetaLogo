@@ -5,14 +5,19 @@ const fs = require("fs");
 // Array of questions inside inquirer.prompt
 inquirer.prompt([
     {   type: "input",
-        name: "color",
-        message: "What color would you like to use for your logo?", 
-        choices: ["red", "blue", "green", "yellow"],
+        name: "textColor",
+        message: "What color would you like the text on your logo to be?", 
+        // input can be a color OR a hexidicimal number
     },
     {   type: "input",
         name: "shape",
-        message: "What shape would you like to include?", 
-        choices: ["triangle", "circle", "square"],
+        message: "What shape would you like your logo to be?", 
+        choices: ["circle", "triangle", "square"],
+    },
+    {   type: "input",
+        name: "bgColor",
+        message: "What color would you like the background color of your logo be?", 
+        // input can be a color OR a hexidicimal number
     },
     {   type: "input",
         name: "text",
@@ -26,6 +31,22 @@ inquirer.prompt([
 // A function to write README file
     fs.writeFileSync("draftLogo.svg", logoCreator(data))
 });
+
+
+//  Populating the logo file
+function logoCreator(data) {
+    console.log(typeof(data));
+    console.log("Generated logo.svg");
+    console.log(`${data.color}`);
+
+    return `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+
+    <${data.shape} cx="150" cy="100" r="80" fill="${data.bgColor}" />
+  
+    <text x="150" y="125" font-size="60" text-anchor="middle" fill="${data.textColor}">SVG</text>
+  
+  </svg>`
+}
 
 // License functions
             // function licenseBadge(licenseChoice) {
@@ -43,42 +64,4 @@ inquirer.prompt([
             //     `;
             // }
 
-//  Populating the logo file
-function logoCreator(data) {
-    console.log("logo coming soon");
-    console.log(`${data.color}`);
-                    //     return `
-                    // # Title: ${data.title}
-                    
-                    // ${licenseBadge(data.license)}
-                    // ## Description: 
-                    //     ${data.description}
 
-                    // ## Table of Contents: 
-                    // - [Description](#description) 
-                    // - [Installation](#installation)
-                    // - [Usage](#usage) 
-                    // - [Credits](#credits) 
-                    // - [Test](#test) ${licenseTOC(data.license)}
-                    // - [Questions](#questions) 
-
-                    // ## Installation: 
-                    //     ${data.instructions}
-
-                    // ## Usage: 
-                    //     ${data.usage}
-
-                    // ## Credits: 
-                    //     ${data.credits}
-
-                    // ## Test: 
-                    //     ${data.test}
-                    // ${licenseNotice(data.license)}
-                    // ## Questions
-                    // Contact me: \n
-                    //     -gitHub username: ${data.gitHub} \n
-                    //     -gitHub profile: https://github.com/${data.gitHub} \n
-                    //     -Email: ${data.email}
-
-                    //     `
-}
