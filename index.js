@@ -29,7 +29,7 @@ inquirer.prompt([
 .then((data) => {
 
 // A function to write README file
-    fs.writeFileSync("logo.svg", logoCreator(data))
+    fs.writeFileSync("./lib/logo.svg", logoCreator(data))
 });
 
 
@@ -51,5 +51,3 @@ function logoCreator(data) {
     </html>
   </svg>`
 }
-
-

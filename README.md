@@ -1,5 +1,6 @@
 # YOUgetaLogo
 
+![Oprah](./READMEimgs/oprah.jpeg)
 
 ## Description: 
 This project was created to enable a user to quickly and easily generate a logo. This code package used inquirer, fs methods, npm, an understanding of node_modules, directories, and so much more.
