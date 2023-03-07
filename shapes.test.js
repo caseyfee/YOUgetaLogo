@@ -1,5 +1,6 @@
 // need to bring in the data
-
+const UserIndex = require('./index');
+const Shapes = require('./shapes');
 
 var shape = new Triangle(data);
 shape.setColor(`${data.bgColor}`);

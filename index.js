@@ -2,6 +2,7 @@
 const inquirer = require('inquirer');
 const fs = require("fs");
 
+
 // Array of questions inside inquirer.prompt
 inquirer.prompt([
     {   type: "input",
@@ -26,11 +27,13 @@ inquirer.prompt([
 ])
 
 
-// .then((data) => {
+.then((data) => {
 
-// // A function to write README file (use fs.writeFile?)
-//     fs.writeFileSync("./lib/logo.svg", logoCreatorTri(data))
-// });
+// A function to write README file (use fs.writeFile?)
+    fs.writeFileSync("./lib/logo.svg", logoCreatorTri(data))
+});
+
+module.exports = UserIndex;
 
 
 //  Populating the logo file-Circle
