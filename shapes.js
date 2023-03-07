@@ -28,7 +28,7 @@ class Shape {
 class Circle extends Shape {
         // should I be calling varible names here or data.color?
         constructor(color, textColor, text);
-        
+        super(color, textColor, text);
         circle = `<!DOCTYPE html>
         <html>
         <body>
@@ -43,6 +43,8 @@ class Circle extends Shape {
         console.log("Generated logo.svg");
       }
 }
+
+// For other classes, should we use polymorphism ... and overwrite the HTML?
 
 const newCircle = new Circle(
         
@@ -78,6 +80,7 @@ const newCircle = new Circle(
 //         </html>
 //         </svg>`
 //         }
+
 
 
 
