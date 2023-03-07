@@ -1,6 +1,8 @@
 // Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require("fs");
+const {Circle, Triangle, Square} = require("./lib/shapes");
+// ADD TRI SQUARE HERE IN {}
 
 
 // Array of questions inside inquirer.prompt
@@ -28,63 +30,24 @@ inquirer.prompt([
 
 
 .then((data) => {
+const {shape, text, textColor, bgColor} = data;
+
+var newShape;
+
+switch (shape){
+    case "circle":
+        newShape = new Circle(bgColor, textColor, text);
+        break;
+    case "triangle":
+        newShape = new Triangle(bgColor, textColor, text);
+        break;
+    case "square":
+        newShape = new Square(bgColor, textColor, text);
+        break;
+}
 
 // A function to write README file (use fs.writeFile?)
-    fs.writeFileSync("./lib/logo.svg", logoCreatorTri(data))
+    fs.writeFileSync("./examples/logo.svg", newShape.getHTML())
 });
 
-module.exports = UserIndex;
 
-
-//  Populating the logo file-Circle
-    // function logoCreatorCirc(data) {
-    //     console.log(typeof(data));
-    //     console.log("Generated logo.svg");
-    //     console.log(`${data.color}`);
-
-    //     return `<!DOCTYPE html>
-    //     <html>
-    //     <body>
-    //     <svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-
-    //     <circle cx="150" cy="100" r="80" fill="${data.bgColor}" />
-    
-    //     <text x="150" y="125" font-size="60" text-anchor="middle" fill="${data.textColor}">${data.text}</text>
-    //     </body>
-    //     </html>
-    //   </svg>`
-    // }
-
-// Populating the logo file-Triangle shape
-    // function logoCreatorTri(data)  {
-    //         console.log("Generated logo.svg");
-
-    //         return `<!DOCTYPE html>
-    //         <html>
-    //         <body>
-    //         <svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-
-    //         <polygon points ="150, 18 244, 182 56, 182" fill="${data.bgColor}" />
-        
-    //         <text x="150" y="145" font-size="60" text-anchor="middle" fill="${data.textColor}">${data.text}</text>
-    //         </body>
-    //         </html>
-    //       </svg>`
-    //     }
-
-// Populating the logo file-Square shape
-    // function logoCreatorSqu(data)  {
-    //     console.log("Generated logo.svg");
-
-    //     return `<!DOCTYPE html>
-    //     <html>
-    //     <body>
-    //     <svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-
-    //     <rect x="10" y="10" width="200" height="200" fill="${data.bgColor}"/>
-    
-    //     <text x="105" y="125" font-size="60" text-anchor="middle" fill="${data.textColor}">${data.text}</text>
-    //     </body>
-    //     </html>
-    //   </svg>`
-    // }
