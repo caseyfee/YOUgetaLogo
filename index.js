@@ -2,7 +2,6 @@
 const inquirer = require('inquirer');
 const fs = require("fs");
 const {Circle, Triangle, Square} = require("./lib/shapes");
-// ADD TRI SQUARE HERE IN {}
 
 
 // Array of questions inside inquirer.prompt
@@ -49,5 +48,7 @@ switch (shape){
 // A function to write README file (use fs.writeFile?)
     fs.writeFileSync("./examples/logo.svg", newShape.getHTML())
 });
+
+
 
 
