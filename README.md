@@ -15,12 +15,7 @@ This project was created to enable a user to quickly and easily generate a logo.
 Thanks to my tutor - Dominique Meeks Gombe, classmates, and the youtubers out there!
 
 ## Questions
-Contact me:
-
--gitHub username: caseyfee
-
--gitHub profile: https://github.com/caseyfee 
-
+Contact me at:
 -Email: caseyfee3@gmail.com
 
 ## Video Walkthrough
