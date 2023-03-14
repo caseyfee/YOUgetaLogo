@@ -47,6 +47,7 @@ switch (shape){
 
 // A function to write README file (use fs.writeFile?)
     fs.writeFileSync("./examples/logo.svg", newShape.getHTML())
+    
 });
 
 
